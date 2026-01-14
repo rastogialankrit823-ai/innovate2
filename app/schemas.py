@@ -7,3 +7,6 @@ class userbase(BaseModel):
     upw: str 
     amount: int
     reg : str
+class userb(BaseModel):
+    id: str
+    pw :str
