@@ -28,7 +28,8 @@ async def find(id :str ,pw :str ,session :AsyncSession =Depends(get_async_sessio
 	fl=False
 	for j in text2:
 		if(j.uid==id and j.upw==pw):fl=True
-	if(fl==False):raise HTTPException(status_code=404,detail="user not found") 
+	if(fl==False):
+		raise HTTPException(status_code=500,detail="user not found") 
 	return fl
 
 
