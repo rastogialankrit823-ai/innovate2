@@ -1,13 +1,14 @@
 from collections.abc import AsyncGenerator
 import uuid
 
-from sqlalchemy import Column , String ,Text ,DateTime ,ForeignKey
+from sqlalchemy import Column , String ,Integer,Text ,DateTime ,ForeignKey
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine ,async_sessionmaker
 from sqlalchemy.orm import DeclarativeBase ,relationship
 from datetime import datetime 
 
 DATABASE_URL ="sqlite+aiosqlite:///./test.db"
+
 class BASE(DeclarativeBase):
 	pass
 
@@ -18,7 +19,7 @@ class Post(BASE):
 	#caption=Column(Text)
 	uid=Column(String, nullable=False)
 	upw=Column(String, nullable=False)
-	amount=Column(String , nullable=False)
+	amount=Column(Integer , nullable=False)
 	reg=Column(String , nullable=False)
 
 	created_at=Column(DateTime,default=datetime.utcnow)

@@ -15,7 +15,7 @@ async def life(app :FastAPI):
 
 app=FastAPI(lifespan=life)
 
-text={1:{ "title": "new post", "content":"cool post" }}
+text={1:{ "title": "new post"}}
 
 @app.get("/hellow")
 def hellow():
